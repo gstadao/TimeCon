@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - timecon@localhost" uuid="397fe772-d77a-4c05-a332-c27c51d50420">
+    <database-info product="MySQL" version="5.7.9" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.4">
+      <schema id="1" name="timecon"/>
+      <table id="2" parent="1" name="us_rol"/>
+      <table id="3" parent="1" name="us_usuario"/>
+      <column id="4" parent="2" name="us_id_rol">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="5" parent="2" name="role">
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <key id="6" parent="2" name="PRIMARY">
+        <columns>us_id_rol</columns>
+        <primary>1</primary>
+      </key>
+      <column id="7" parent="3" name="us_id_usuario">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="8" parent="3" name="email">
+        <mandatory>1</mandatory>
+        <data-type>varchar(128)</data-type>
+      </column>
+      <column id="9" parent="3" name="password">
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="10" parent="3" name="nombre">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="11" parent="3" name="telefono">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="12" parent="3" name="us_id_rol">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="13" parent="3" name="activo">
+        <mandatory>1</mandatory>
+        <data-type>int(45)</data-type>
+      </column>
+      <column id="14" parent="3" name="createdBy">
+        <mandatory>1</mandatory>
+        <data-type>int(45)</data-type>
+      </column>
+      <column id="15" parent="3" name="createdDtm">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="16" parent="3" name="updatedBy">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="17" parent="3" name="updatedDtm">
+        <data-type>datetime</data-type>
+      </column>
+      <index id="18" parent="3" name="fk_us_usuario_copy1_us_rol_idx">
+        <columns>us_id_rol</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="19" parent="3" name="PRIMARY">
+        <columns>us_id_usuario
+us_id_rol</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="20" parent="3" name="us_usuario_ibfk_1">
+        <columns>us_id_rol</columns>
+        <ref-key>~.us_rol.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+    </database-model>
+  </data-source>
+</component>
